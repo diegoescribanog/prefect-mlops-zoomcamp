@@ -110,7 +110,7 @@ def train_best_model(
 
 
 @flow
-def main_homework_2(
+def main_homework(
     train_path: str = "./data/green_tripdata_2023-02.parquet",
     val_path: str = "./data/green_tripdata_2023-03.parquet",
 ) -> None:
@@ -132,4 +132,4 @@ def main_homework_2(
 
 
 if __name__ == "__main__":
-    main_homework_2()
+    main_homework()
