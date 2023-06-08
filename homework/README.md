@@ -1,4 +1,4 @@
-## Homework
+## Homework with my answers (in boldy)
 
 The goal of this homework is to familiarize users with workflow orchestration. 
 
@@ -69,7 +69,7 @@ What’s the RMSE in the artifact to two decimal places ?
 - 9.71
 - 12.02
 - 15.33
-- 5.37
+- **5.37**
 
 
 ## Q5. Emails
@@ -108,7 +108,7 @@ Test the notification functionality by running a deployment.
 What is the name of the pre-built prefect-email task function?
 
 - `send_email_message`
-- `email_send_message`
+- **`email_send_message`**
 - `send_email`
 - `send_message`
 
@@ -134,7 +134,7 @@ What is the name of the second step in the Automation creation process?
 
 - Details
 - Trigger
-- Actions
+- **Actions**
 - The end
 
 
