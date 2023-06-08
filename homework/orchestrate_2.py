@@ -10,6 +10,9 @@ import mlflow
 import xgboost as xgb
 from prefect import flow, task
 
+from prefect import flow
+from prefect_email import EmailServerCredentials, email_send_message
+
 
 @task(retries=3, retry_delay_seconds=2)
 def read_data(filename: str) -> pd.DataFrame:
@@ -131,5 +134,18 @@ def main_homework_2(
     train_best_model(X_train, X_val, y_train, y_val, dv)
 
 
+@flow
+def example_email_send_message_flow(email_address):
+    email_server_credentials = EmailServerCredentials.load("prefect-email-saver")
+    subject = email_send_message.with_options(name=f"email {email_address}").submit(
+        email_server_credentials=email_server_credentials,
+        subject="Example Flow Notification using Gmail",
+        msg="This proves email_send_message works!",
+        email_to=email_address,
+    )
+
+
 if __name__ == "__main__":
     main_homework_2()
+    example_email_send_message_flow(["diegoescribanog@gmail.com"])
+
